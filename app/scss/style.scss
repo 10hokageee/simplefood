@@ -3,3 +3,59 @@
 @import 'global';
 @import 'media';
 @import 'reset';
+
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  padding: 70px 0;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: space-between;
+  
+  &__item {
+    font-size: 18px;
+    line-height: 21px;
+    transition: color 0.3s ease-in-out;
+    &:not(:last-child){
+      margin-right: 45px;
+    }
+    &:hover {
+    color: $orange-900;
+    }
+  }
+
+  &__item-icon {
+    margin-right: 62px;
+  }
+
+  &__link {
+    position: relative; 
+    transition: box-shadow 0.3s ease-in-out;
+    &:focus {
+      @extend %focus
+    }
+  }
+
+  &__num {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    line-height: 17px;
+    background-color: $orange-900;
+    border-radius: 50%;
+    font-size: 12px;
+    color: #fff;
+    right: -7px;
+    top: -8px;
+  }
+}
+
+
