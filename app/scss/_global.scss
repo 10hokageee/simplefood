@@ -1,3 +1,9 @@
+html,
+body {
+  height: 100%;
+}
+
+
 
 body {
   color: $dark;
@@ -5,6 +11,12 @@ body {
   line-height: 1.5;
   @extend %rubik-regular;
   background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 
