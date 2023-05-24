@@ -85,6 +85,7 @@
     font-size: 10px;
   }
 }
+
 .footer__logo {
   display: inline-block;
   margin-bottom: 30px;
@@ -134,16 +135,20 @@
     }
   }
   &__btn {
-   @extend %btn;
+    @extend %btn;
+    @extend %transition;
     & svg {
       position: absolute;
       top: 15px;
       left: 40px;
     }
-    &:hover {
-      color: $orange-900;
-      background-color: $bg-color;
-      box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+    &:hover,
+    &:focus {
+      @extend %hover;
+    }
+    &:hover path,
+    &:focus path {
+      fill: $orange-900;
     }
   }
   &__contacts a:not(:last-child) {
@@ -227,22 +232,23 @@
 }
 
 .preview {
-&__inner {
-  padding: 156px 0 265px 0;
-  background-repeat: no-repeat;
-  background-position: right;
-  height: 660px;
-} 
-&__title {
-  font-size: 66px;
-  color: $darkBlue-900;
-  @extend %rubik-medium;
-  line-height: 1.3;
-  margin-bottom: 20px;
-  & span {
-   color: $orange-900;
+  &__inner {
+    padding: 156px 0 265px 0;
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 660px;
   }
-}
+  &__title {
+    font-size: 66px;
+    color: $darkBlue-900;
+    @extend %rubik-medium;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    & span {
+      color: $orange-900;
+    }
+  }
   &__text {
     max-width: 460px;
     width: 100%;
@@ -264,55 +270,81 @@
     }
   }
   &__link {
-    text-decoration: underline;
+    @extend %link;
     @extend %transition;
-    &:focus {
-      text-decoration: transparent;
-      box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
-      border-radius: 5px;
-    }
-    &:hover {
-      color: $orange-900;
-      text-decoration: transparent;
-    }
-    &:active {
-      text-decoration: transparent;
-    }
   }
 }
-
 
 .features {
   padding-top: 120px;
   text-align: center;
-  &__title{
-  @extend %rubik-medium;
-  color: $darkBlue-900;
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 1.3;
-  display: inline;
+  &__title {
+    @extend %rubik-medium;
+    color: $darkBlue-900;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.3;
+    display: inline;
   }
 }
 
-.features-filter{
+.features-filter {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 60px;
   margin-bottom: 45px;
+  &__list {
+    position: relative;
+  }
   &__list:not(:last-child) {
-  margin-right: 72px;
+    margin-right: 20px;
   }
   &__btn {
-    padding-left: 54px;
+    padding: 22px 32px 22px 86px;
+    @extend %rubik-regular;
+    box-shadow: 0px 0px 0px 1px #ececec;
+    border-radius: 5px;
+    @extend %transition;
+    color: $darkBlue-900;
+    & svg {
+      left: 33px;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%);
+    }
+    path {
+      fill: $darkBlue-900;
+    }
+    &:focus {
+      @extend %focus;
+      color: $darkBlue-900;
+    }
+    &:focus path {
+      fill: $darkBlue-900;
+    }
+    &:hover {
+      @extend %hover;
+    }
+    &:hover path {
+      fill: $orange-900;
+    }
+  }
+}
+
+.mixitup-control-active {
+  background-color: $orange-900;
+  color: #fff;
+  & path {
+    fill: #fff;
   }
 }
 
 .features-list__items {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
 }
 
 .features-list__item-img {
@@ -325,26 +357,29 @@ gap: 30px;
   max-width: 210px;
   width: 100%;
   margin: 0 auto;
-  box-shadow: 0px 0px 0px 1px #ECECEC;
-border-radius: 5px;
+  box-shadow: 0px 0px 0px 1px #ececec;
+  border-radius: 5px;
+  @extend %transition;
+  &:hover {
+    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+    border-radius: 5px;
+  }
 }
 
 .features-list__item-title {
   font-size: 15px;
-line-height: 18px;
-@extend %rubik-regular;
-
+  line-height: 18px;
+  @extend %rubik-regular;
 }
 
 .features-list__item-title p {
   color: $darkBlue-900;
   font-size: 15px;
-line-height: 1.4;
-@extend %rubik-medium;
-margin-bottom: 10px;
-margin-top: 28px;
+  line-height: 1.4;
+  @extend %rubik-medium;
+  margin-bottom: 10px;
+  margin-top: 28px;
 }
-
 
 .features-list__item-title-margin-top p {
   margin-top: 10px;
@@ -359,3 +394,10 @@ margin-top: 28px;
   margin-bottom: 20px;
 }
 
+.features__link {
+  @extend %link;
+  @extend %transition;
+  &:focus {
+    text-decoration: underline;
+  }
+}

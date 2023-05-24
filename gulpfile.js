@@ -50,8 +50,9 @@ return src('app/images/**/*.*')
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
-    'app/js/main.js',
-  'node_modules/mixitup/dist/mixitup.min.js'])
+    'node_modules/mixitup/dist/mixitup.js',
+    'app/js/main.js'
+  ])
   .pipe( concat('main.min.js'))
   .pipe(uglify())
   .pipe(dest('app/js'))

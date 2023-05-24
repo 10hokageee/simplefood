@@ -2,4 +2,6 @@ $(function(){
 
 });
 
-var mixitup = require('.features-list__items');
+
+var mixitup = mixitup('.features-list__items')
+
