@@ -16,9 +16,10 @@ function browsersync() {
   })
 }
 
+
 function styles() {
   return src('app/scss/style.scss')
-  .pipe(scss({outputStyle: 'expanded'}))
+  .pipe(scss({outputStyle: 'compressed'}))
   .pipe(concat('style.min.css'))
   .pipe(autoprefixer({
     overrideBrowserslist: ['last 10 versions'],
@@ -27,6 +28,7 @@ function styles() {
   .pipe(dest('app/css'))
   .pipe(browserSync.stream())
 }
+
 
 function images(){
 return src('app/images/**/*.*')
@@ -48,12 +50,14 @@ return src('app/images/**/*.*')
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
-    'app/js/main.js'])
+    'app/js/main.js',
+  'node_modules/mixitup/dist/mixitup.min.js'])
   .pipe( concat('main.min.js'))
   .pipe(uglify())
   .pipe(dest('app/js'))
   .pipe(browserSync.stream())
 }
+
 
 function build() {
   return src([
@@ -64,9 +68,11 @@ function build() {
   .pipe(dest('dist'))
 }
 
+
 function cleanDist() {
 return del('dist')
 }
+
 
 function watching() {
 watch(['app/scss/**/*.scss'], styles);
