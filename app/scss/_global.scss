@@ -26,3 +26,26 @@ body {
   padding: 0 15px;
   margin: 0 auto;
 }
+
+
+.animation {
+  color: $darkBlue-900;
+  &:hover {
+    color: $orange-900;
+    text-decoration: transparent;
+    }
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+      border-radius: 5px;
+      text-decoration: transparent;
+    }
+    &:active {
+    text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+    color: $darkBlue-900;
+    box-shadow: none;
+    }
+}
+
+.active {
+  color: $orange-900;
+}

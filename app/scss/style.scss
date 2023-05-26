@@ -5,15 +5,12 @@
 @import "reset";
 @import "libs";
 
-.header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 70px 0;
-}
+
 
 .logo {
   transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-right: auto;
+  border-radius: 5px;
 }
 
 .logo:focus {
@@ -28,63 +25,84 @@
   opacity: 0.5;
 }
 
-.menu-list {
+.header-menu {
   display: flex;
   justify-content: space-between;
-  &__item {
-    font-size: 18px;
-    line-height: 21px;
-    transition: color 0.3s ease-in-out;
-    &:not(:last-child) {
-      margin-right: 45px;
-    }
-  }
-  &__item-icon {
-    margin-right: 62px;
-  }
-  &__link {
-    font-size: 18px;
-    line-height: 21px;
-    position: relative;
-    transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
-    &:hover {
-      color: $orange-900;
-    }
-    &:focus {
-      @extend %focus;
-    }
-  }
-  &__link--icon {
-    padding: 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
-    &:hover {
-      background-color: #ff7a50;
-      path,
-      ellipse {
-        stroke: #fff;
+  align-items: center;
+  padding: 57px 0 58px 0;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  margin-right: 65px;
+  }  
+
+   &__list-item{
+      font-size: 18px;
+      line-height: 21px;
+      transition: color 0.3s ease-in-out;
+      &:not(:last-child) {
+        margin-right: 45px;
       }
-      &:hover .menu-list__num {
-        background-color: #fff;
-        color: #ff7a50;
-      }
+    }    
+    &__list-link {
+      font-size: 18px;
+      line-height: 21px;
+      transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+      border-radius: 5px;
     }
-  }
-  &__num {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    text-align: center;
-    line-height: 14px;
-    background-color: $orange-900;
-    border-radius: 50%;
-    font-size: 12px;
-    color: #fff;
-    right: 5px;
-    top: 4px;
-    font-size: 10px;
+}
+
+
+.user-nav {
+  display: flex;
+&__link {
+  &:not(:last-child){
+    margin-right: 10px;
   }
 }
+
+&__btn {
+  width: 44px;
+  height: 44px;
+  position: relative;
+  border-radius: 5px;
+  @extend %transition;
+  &:hover {
+    background-color: #ff7a50;
+    path,
+    ellipse {
+      stroke: #fff;
+    }
+    &:hover .user-nav__num {
+      background-color: #fff;
+      color: #ff7a50;
+    }
+  }
+  &:focus {
+    @extend %focus;
+  }
+  &:active {
+     background-color: #FFF2ED;
+     box-shadow: none;
+  }
+}
+&__num {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  line-height: 14px;
+  background-color: $orange-900;
+  border-radius: 50%;
+  font-size: 12px;
+  color: #fff;
+  right: 5px;
+  top: 4px;
+  font-size: 10px;
+}
+}
+
+
 
 .footer__logo {
   display: inline-block;
@@ -106,9 +124,15 @@
   &__item a {
     display: block;
   }
-  &__link:not(:last-child) {
-    padding-bottom: 20px;
+  &__link {  
+    color: $dark;
+    &:not(:last-child){
+      margin-bottom: 20px; 
+    } 
+    
   }
+
+  
   &__form {
     max-width: 200px;
     width: 100%;
@@ -269,8 +293,9 @@
       box-shadow: none;
     }
   }
+
   &__link {
-    @extend %link;
+    text-decoration: underline;
     @extend %transition;
   }
 }
