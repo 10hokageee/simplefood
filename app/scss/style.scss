@@ -159,7 +159,6 @@
     }
   }
   &__btn {
-    @extend %btn;
     @extend %transition;
     & svg {
       position: absolute;
@@ -279,7 +278,6 @@
     margin-bottom: 20px;
   }
   &__button {
-    @extend %btn;
     padding: 12px 32px;
     max-width: 146px;
     margin-right: 34px;
@@ -411,7 +409,6 @@
 }
 
 .features-list__item-btn {
-  @extend %btn;
   padding: 7px 16px;
   max-width: 101px;
   width: 100%;
