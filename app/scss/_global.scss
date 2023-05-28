@@ -4,7 +4,6 @@ body {
 }
 
 
-
 body {
   color: $dark;
   font-size: 20px;
@@ -30,6 +29,8 @@ body {
 
 .animation {
   color: $darkBlue-900;
+  border-radius: 5px;
+  @extend %transition;
   &:hover {
     color: $orange-900;
     text-decoration: transparent;
@@ -61,8 +62,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   position: relative;
-  max-width: 200px;
-  width: 100%;
+  display: block;
   @extend %transition;
   &:hover {
     @extend %hover;
@@ -94,4 +94,21 @@ body {
   font-weight: 500;
   font-size: 36px;
   line-height: 1.3;
+}
+
+.logo {
+  transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.logo:focus {
+  @extend %focus;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logo:active {
+  opacity: 0.5;
 }
