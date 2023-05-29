@@ -8,6 +8,7 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const svgSprite = require('gulp-svg-sprite');
 const replace = require('gulp-replace');
+const cheerio = require('gulp-cheerio');
 
 
 function browsersync() {
@@ -72,7 +73,7 @@ function svgSprites() {
         parserOptions: { xmlMode: true },
       })
   )
-	.pipe(replace('&gt;','>')) 
+	.pipe(replace('&gt;','>')) // боремся с заменой символа 
 	.pipe(
 	      svgSprite({
 	        mode: {
