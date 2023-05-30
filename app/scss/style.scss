@@ -40,20 +40,37 @@
     }
   }
 
+
   &__btn {
     width: 44px;
     height: 44px;
     position: relative;
     border-radius: 5px;
     @extend %transition;
-
-    &:hover {
-      background-color: $orange-900;
-
-      path,
-      ellipse {
-        stroke: #fff;
+    
+    & svg {
+      width: 18px;
+      height: 19px;
+      stroke: $darkBlue-900;
+      @extend %transition;
+      use {
+        fill: #fff;;
       }
+      ellipse {
+        stroke: $orange-900;
+      }
+    }
+
+    &:hover svg{
+      stroke: #fff;
+     use {
+      fill: $orange-900;
+     }
+    }
+    
+    &:hover{
+      background-color: $orange-900;
+    }
 
       &:hover .user-nav__num {
         background-color: #fff;
@@ -69,8 +86,7 @@
       background-color: #fff2ed;
       box-shadow: none;
     }
-  }
-
+    
   &__num {
     position: absolute;
     padding: 4px;
@@ -82,7 +98,9 @@
     font-size: 10px;
     left: 26px;
   }
-}
+  }
+
+
 
 .preview {
   padding-top: 0;
@@ -415,22 +433,107 @@
   text-align: center;
   margin-bottom: 45px;
 }
+
+&__quote-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
 &__inner {
 display: flex;
 align-items: center;
+display: block;
 }
 
 &__img {
   border-radius: 50%;
-  margin-left: 90px;
-} 
+  max-width: 300px;
+}
+
+&__quote {
+  padding: 0 40px; 
+}
 
 &__blockquote {
   position: relative;
-  max-width: 570px;
-  margin-left: 80px;
-  @extend %rubik-italic;
+  padding-left: 40px;
+  & blockquote {
+    margin-bottom: 30px;
+    @extend %rubik-italic;
+    max-width: 570px;
+    &::after,
+    &::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 20px;
+   
+  }
+
+  &::after {
+  background-image: url('../images/icons/quotes.svg');
+   top: 0;
+   left: 0; 
+  }
+
+  &::before {
+    transform: scale(-1, 1);
+    background-image: url('../images/icons/quotes.svg');
+    bottom: 102px;
+    right: -43px;
+  }
+  }
+
+  & figcaption {
+    color: $orange-900;
+    }
+  
+    & span {
+      font-size: 14px;
+      margin-bottom: 78px;
+    }
+ 
+
 }
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  li {
+    button {
+      background-color: $dots-bg;
+      font-size: 0;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+    } 
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}
+
+
+.slick-next,
+.slick-prev {
+  position: absolute;
+  bottom: 0;
+}
+
+.slick-next {
+left: 0;
+margin-left: 475px;
+bottom: -10px;
+}
+
+.slick-prev {
+right: -4px;
+bottom: -10px;
+margin-right: 475px;
+}
+
 
 }
 
