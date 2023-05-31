@@ -1,9 +1,8 @@
 @import "vars";
 @import "fonts";
-@import "global";
-@import "media";
 @import "reset";
 @import "libs";
+@import "global";
 
 .header__logo {
   margin-left: 5px;
@@ -54,7 +53,7 @@
       stroke: $darkBlue-900;
       @extend %transition;
       use {
-        fill: #fff;;
+        fill: $white;;
       }
       ellipse {
         stroke: $orange-900;
@@ -62,7 +61,7 @@
     }
 
     &:hover svg{
-      stroke: #fff;
+      stroke: $white;
      use {
       fill: $orange-900;
      }
@@ -73,19 +72,11 @@
     }
 
       &:hover .user-nav__num {
-        background-color: #fff;
+        background-color: $white;
         color: $orange-900;
       }
     }
 
-    &:focus {
-      @extend %focus;
-    }
-
-    &:active {
-      background-color: #fff2ed;
-      box-shadow: none;
-    }
     
   &__num {
     position: absolute;
@@ -93,7 +84,7 @@
     line-height: 0.75;
     background-color: $orange-900;
     border-radius: 50%;
-    color: #fff;
+    color: $white;
     top: 4px;
     font-size: 10px;
     left: 26px;
@@ -175,14 +166,17 @@
     color: $darkBlue-900;
 
     & svg {
+      width: 44px;
+      height: 44px;
       left: 33px;
       top: 50%;
       position: absolute;
       transform: translateY(-50%);
+      fill: $darkBlue-900;
     }
 
-    path {
-      fill: $darkBlue-900;
+    &:hover svg {
+      fill: $orange-900;
     }
 
     &:focus {
@@ -190,24 +184,23 @@
       color: $darkBlue-900;
     }
 
-    &:focus path {
-      fill: $darkBlue-900;
-    }
 
     &:hover {
       @extend %hover;
+      color: $orange-900;
+    }
+    
+    &:active {
+      box-shadow: none;
     }
 
-    &:hover path {
-      fill: $orange-900;
-    }
   }
   .mixitup-control-active {
     background-color: $orange-900;
-    color: #fff;
+    color: $white;
   
-    & path {
-      fill: #fff;
+    svg {
+      fill: $white;
     }
   }
   
@@ -288,27 +281,32 @@
   background-repeat: no-repeat;
   background-size: 440px 585px;
   background-position: left center;
-  padding: 62px 0;
+  padding: 58px 0;
   margin: 0 70px;
  }
 
 
- &__title,
- &__text,
- &__list,
- &__link {
+&__content {
   max-width: 470px;
   margin-left: auto;
- }
+}
+
 
  &__title,
  &__text {
   margin-bottom: 30px;
+
+  span {
+    display: block;
+    max-width: 340px;
+}
+
  }
 
  &__link {
   display: inline-block;
   padding: 12px 32px 12px 32px;
+  font-size: 18px;
  }
 
  &__item {
@@ -370,7 +368,7 @@
 .restaurant-card {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  background-color: #fff;
+  background-color: $white;
   padding-bottom: 20px;
   text-align: left;
   @extend %transition;
@@ -380,6 +378,7 @@
 
   &__img {
   padding-bottom: 15px;
+  background-size: cover;
   }
 
   &__subtitle{
@@ -415,16 +414,37 @@
     float: right;
     position: relative;
     margin-right: 20px;
-    &::after {
-      content: '';
+    svg {
       position: absolute;
       width: 24px;
       height: 24px;
-      background-image: url('../images/icons/arrow.svg');
       top: 4px;
       left: 50%;
       transform: translateX(-50%);
+      fill: $white;
     }
+    
+    &:hover svg {
+      fill: $orange-900;
+      transform: translateX(10%);
+    }
+
+    &:focus svg {
+      fill: $orange-900;
+    }
+    
+    &:active svg {
+      fill: $orange-900;
+    }
+    
+   &:hover {
+    border-radius: 20px;
+   }
+
+   &:focus {
+    border-radius: 20px;
+   }
+
   }
 }
 
@@ -481,10 +501,13 @@ display: block;
   &::before {
     transform: scale(-1, 1);
     background-image: url('../images/icons/quotes.svg');
-    bottom: 102px;
-    right: -43px;
+    bottom: 89px;
+    right: -40px;
   }
   }
+
+
+
 
   & figcaption {
     color: $orange-900;
@@ -508,6 +531,23 @@ display: block;
       border-radius: 50%;
       width: 15px;
       height: 15px;
+      @extend %transition;
+
+      &:active {
+        background-color: #FFAE94;
+        box-shadow: none;
+      }
+
+      &:hover {
+        background-color: transparent;
+        box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+      }
+
+      &:focus {
+        @extend %focus;
+        border-radius: 50%;
+      }
+
     } 
     &:not(:last-child) {
       margin-right: 15px;
@@ -533,6 +573,34 @@ right: -4px;
 bottom: -10px;
 margin-right: 475px;
 }
+
+}
+
+
+.applications {
+  &__inner {
+    background-position: right center;
+    background-size: 570px 380px;
+    background-repeat: no-repeat;
+    padding: 38px 0;
+  }
+
+  &__title {
+    margin-bottom: 45px;
+    max-width: 497px;
+  }
+
+  &__text {
+    max-width: 538px;
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
 
 
 }
@@ -611,9 +679,17 @@ margin-right: 475px;
     @extend %transition;
 
     & svg {
+      width: 14px;
+      height: 14px;
       position: absolute;
       top: 15px;
       left: 40px;
+      fill: $white;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      fill: $orange-900;
     }
 
     &:hover,
@@ -621,10 +697,6 @@ margin-right: 475px;
       @extend %hover;
     }
 
-    &:hover path,
-    &:focus path {
-      fill: $orange-900;
-    }
   }
 }
 
@@ -695,12 +767,21 @@ margin-right: 475px;
     align-items: center;
     border-radius: 50%;
 
-    &:hover {
-      background-color: #ff7a50;
+    svg {
+    height: 20px;
+    fill: $dark;
+    }
+     
+    &:active svg {
+      fill: $orange-900;
     }
 
-    &:hover.contacts-socials__link path {
-      fill: #fff;
+    &:hover svg {
+      fill: $white;
+    }
+
+    &:hover {
+      background-color: #ff7a50;
     }
 
     &:focus {
