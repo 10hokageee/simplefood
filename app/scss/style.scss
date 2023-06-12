@@ -53,7 +53,7 @@
       stroke: $darkBlue-900;
       @extend %transition;
       use {
-        fill: $white;;
+        fill: none;
       }
       ellipse {
         stroke: $orange-900;
@@ -62,9 +62,6 @@
 
     &:hover svg{
       stroke: $white;
-     use {
-      fill: $orange-900;
-     }
     }
     
     &:hover{
@@ -94,7 +91,7 @@
 
 
 .preview {
-  padding-top: 0;
+  padding-bottom: 60px;
   &__inner {
     padding: 156px 0 156px 0;
     background-repeat: no-repeat;
@@ -141,6 +138,21 @@
 .features {
   text-align: center;
 
+&__link {
+  @extend %transition;
+  text-decoration: underline;
+  border-radius: 5px;
+  border: 5px transparent;
+
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+}
+
   &__title {
     margin-bottom: 60px;
   }
@@ -149,7 +161,7 @@
 .features-filter {
   display: flex;
   margin-bottom: 45px;
-
+  overflow-x: auto;
   &__list {
     &:not(:last-child) {
       margin-right: 20px;
@@ -164,7 +176,7 @@
     border-radius: 5px;
     @extend %transition;
     color: $darkBlue-900;
-
+    white-space: nowrap;
     & svg {
       width: 44px;
       height: 44px;
@@ -173,6 +185,7 @@
       position: absolute;
       transform: translateY(-50%);
       fill: $darkBlue-900;
+      @extend %transition;
     }
 
     &:hover svg {
@@ -191,7 +204,7 @@
     }
     
     &:active {
-      box-shadow: none;
+      box-shadow: inset 0px -5px 12px rgba(255, 104, 56, 0.2);
     }
 
   }
@@ -213,9 +226,12 @@
   margin-bottom: 60px;
 }
 
-.features-list__item {
+
+
+.product-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   box-shadow: 0 0 0 1px $icon-bg;
   border-radius: 5px;
@@ -233,11 +249,8 @@
     margin-bottom: 8px;
     display: block;
   }
-}
 
-.product-card {
   &__img {
-    margin: 0 auto;
     margin-bottom: 10px;
   }
 
@@ -246,34 +259,16 @@
     line-height: 18px;
     @extend %rubik-regular;
     margin-bottom: 28px;
+    &--marginbottom {
+      margin-bottom: 10px;
+    }
   }
 
   &__btn {
     padding: 7px 16px;
     @extend %rubik-regular;
-    margin: 0 auto;
   }
 }
-
-.product-card__subtitle--marginbottom {
-  margin-bottom: 10px;
-}
-
-.features__link {
-  @extend %transition;
-  text-decoration: underline;
-  border-radius: 5px;
-  border: 5px transparent;
-
-  &:focus {
-    text-decoration: underline;
-  }
-
-  &:active {
-    text-decoration: none;
-  }
-}
-
 
 
 .about {  
@@ -312,6 +307,10 @@
  &__item {
   padding-left: 64px;
   position: relative;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+   }
+
   &::after {
     content: '';
     position: absolute;
@@ -339,11 +338,6 @@
   }
  }
 
- 
- &__item:not(:last-child) {
-  margin-bottom: 20px;
- }
-
  &__list {
   margin-bottom: 30px;
   font-size: 24px;
@@ -369,23 +363,20 @@
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: $white;
-  padding-bottom: 20px;
-  text-align: left;
   @extend %transition;
    &:hover {
-    box-shadow: 0px 3px 15px rgba(255, 104, 56, 0.5);
+    box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
    }
 
   &__img {
-  padding-bottom: 15px;
-  background-size: cover;
+  object-fit: cover;
   }
 
   &__subtitle{
     font-size: 24px;
    line-height: 1.3;
-   padding-left: 20px;
    margin-bottom: 20px;
+   @extend %rubik-regular;
   }
 
   &__time {
@@ -393,7 +384,7 @@
     line-height: 1.67;
     @extend %rubik-regular;
     font-weight: 300;
-    padding-left: 52px;
+    padding-left: 32px;
     position: relative;
     &::after {
       content: '';
@@ -401,19 +392,27 @@
       background-image: url('../images/icons/clock.svg');
       width: 22px;
       height: 22px;
-      left: 20px;
-      bottom: 0;
-      
+      left: 0;
+      bottom: 5px;
     }
+  }
+
+  &__content {
+    padding: 15px 20px 20px 20px;
+  }
+
+  &__inf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   }
 
   &__link {
     display: inline-block;
     padding: 16px 39px;
     border-radius: 20px;
-    float: right;
     position: relative;
-    margin-right: 20px;
     svg {
       position: absolute;
       width: 24px;
@@ -524,6 +523,7 @@ display: block;
 .slick-dots {
   display: flex;
   justify-content: center;
+  position: relative;
   li {
     button {
       background-color: $dots-bg;
@@ -555,12 +555,19 @@ display: block;
   }
 }
 
-
 .slick-next,
 .slick-prev {
   position: absolute;
   bottom: 0;
+  width: 34px;
+  height: 34px;
+  svg {
+  width: 34px;
+  height: 34px;
+  fill: $dots-bg;
+  }
 }
+
 
 .slick-next {
 left: 0;

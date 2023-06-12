@@ -71,7 +71,7 @@
 
     <main class="main">
       <h1 class="sr-only">Доставка еды на дом</h1>
-      <section class="preview section-padding">
+      <section class="preview">
         <div class="container">
           <div
             class="preview__inner"
@@ -167,8 +167,8 @@
                   class="product-card__img"
                   src="images/burgers/1.jpg"
                   alt="Чизбургер с листьями салата"
-                  width="140px"
-                  height="140px"
+                  width="140"
+                  height="140"
                 />
                 <h3
                   class="product-card__subtitle product-card__subtitle--marginbottom"
@@ -187,8 +187,8 @@
                   class="product-card__img"
                   src="images/burgers/2.jpg"
                   alt="Бифбургер"
-                  width="140px"
-                  height="140px"
+                  width="140"
+                  height="140"
                 />
                 <h3 class="product-card__subtitle">
                   Бифбургер</h3>
@@ -205,8 +205,8 @@
                   class="product-card__img"
                   src="images/burgers/3.jpg"
                   alt="Королевский чизбургер"
-                  width="140px"
-                  height="140px"
+                  width="140"
+                  height="140"
                 />
                 <h3 class="product-card__subtitle">
                   Королевский чизбургер</h3>
@@ -223,8 +223,8 @@
                   class="product-card__img"
                   src="images/burgers/4.jpg"
                   alt="Черный гамбургер"
-                  width="140px"
-                  height="140px"
+                  width="140"
+                  height="140"
                 />
                 <h3 class="product-card__subtitle">
                   Черный гамбургер</h3>
@@ -240,8 +240,8 @@
                   class="product-card__img"
                   src="images/burgers/5.jpg"
                   alt="Чикен бургер"
-                  width="140px"
-                  height="140px"
+                  width="140"
+                  height="140"
                 />
                 <h3 class="product-card__subtitle">
                   Чикен бургер</h3>
@@ -258,8 +258,8 @@
                   class="product-card__img"
                   src="images/burgers/1.jpg"
                   alt="Чизбургер с листьями салата"
-                  width="140px"
-                  height="140px"
+                  width="140"
+                  height="140"
                 />
                 <h3
                   class="product-card__subtitle product-card__subtitle--marginbottom"
@@ -278,8 +278,8 @@
                   class="product-card__img"
                   src="images/burgers/2.jpg"
                   alt="Бифбургер"
-                  width="140px"
-                  height="140px"
+                  width="140"
+                  height="140"
                 />
                 <h3 class="product-card__subtitle">
                   Бифбургер</h3>
@@ -295,8 +295,8 @@
                   class="product-card__img"
                   src="images/burgers/3.jpg"
                   alt="Королевский чизбургер"
-                  width="140px"
-                  height="140px"
+                  width="140"
+                  height="140"
                 />
                 <h3 class="product-card__subtitle">
                   Королевский чизбургер</h3>
@@ -313,8 +313,8 @@
                   class="product-card__img"
                   src="images/burgers/4.jpg"
                   alt="Черный гамбургер"
-                  width="140px"
-                  height="140px"
+                  width="140"
+                  height="140"
                 />
                 <h3 class="product-card__subtitle">
                   Черный гамбургер</h3>
@@ -331,8 +331,8 @@
                   class="product-card__img"
                   src="images/burgers/5.jpg"
                   alt="Чикен бургер"
-                  width="140px"
-                  height="140px"
+                  width="140"
+                  height="140"
                 />
                 <h3 class="product-card__subtitle">
                   Чикен бургер</h3>
@@ -378,12 +378,14 @@
           <div class="benefits__inner">
             <h2 class="benefits__title title">Лучшие рестораны</h2>
             <ul class="benefits__list">
-              <article>
-              <li class="restaurant-card">
+              <li class="benefits__list-item">
+                <article class="restaurant-card">
                 <img class="restaurant-card__img" src="images/res1.jpg" alt="Blaze Pizza">
+                <div class="restaurant-card__content">
                   <h3 class="restaurant-card__subtitle">
                     Blaze Pizza
                   </h3>
+                  <div class="restaurant-card__inf">
                   <time class="restaurant-card__time"> 
                     11:00 - 22:00
                   </time>
@@ -392,15 +394,19 @@
                       <use xlink:href="images/sprite.svg#arrow"></use>
                   </svg>   
                   </a>
+                </div>
+                </div>
+                </article>
               </li>
-            </article>
-              <article>
-              <li class="restaurant-card">
-                <img class="restaurant-card__img" src="images/res2.jpg" alt="Pizza Runcho"
-              >
+             
+              <li class="benefits__list-item"> 
+                <article class="restaurant-card">
+                <img class="restaurant-card__img" src="images/res2.jpg" alt="Pizza Runcho">
+                <div class="restaurant-card__content">
                   <h3 class="restaurant-card__subtitle">
                     Pizza Runcho
                   </h3>
+                  <div class="restaurant-card__inf">
                   <time class="restaurant-card__time"> 
                     12:00 - 21:00
                   </time>
@@ -409,15 +415,20 @@
                       <use xlink:href="images/sprite.svg#arrow"></use>
                   </svg>   
                   </a>
+                </div>
+                </div>   
+                 </article>
               </li>
-            </article>
-              <article>
-              <li class="restaurant-card">
-                <img class="restaurant-card__img" src="images/res3.jpg" alt="Pizza Hut"
-              >
+        
+             
+              <li class="benefits__list-item"> 
+                <article class="restaurant-card">
+                <img class="restaurant-card__img" src="images/res3.jpg" alt="Pizza Hut">
+                <div class="restaurant-card__content">
                   <h3 class="restaurant-card__subtitle">
                     Pizza Hut
                   </h3>
+                  <div class="restaurant-card__inf">
                   <time class="restaurant-card__time"> 
                     11:00 - 22:00
                   </time>
@@ -426,14 +437,20 @@
                       <use xlink:href="images/sprite.svg#arrow"></use>
                   </svg>     
                   </a>
+                </div>
+                </div>            
+                </article>
               </li>
-            </article>
-              <article>
-              <li class="restaurant-card">
+
+             
+              <li class="benefits__list-item">
+             <article class="restaurant-card">
                 <img class="restaurant-card__img" src="images/res4.jpg" alt=" McDonald`s">
+                <div class="restaurant-card__content">
                   <h3 class="restaurant-card__subtitle">
                     McDonald`s
                   </h3>
+                  <div class="restaurant-card__inf">
                   <time class="restaurant-card__time"> 
                     06:00 - 23:00
                   </time>
@@ -442,15 +459,20 @@
                       <use xlink:href="images/sprite.svg#arrow"></use>
                   </svg>    
                   </a>
+                </div>
+                </div>         
+                   </article>
               </li>
-            </article>
-              <article>
-              <li class="restaurant-card">
-                <img class="restaurant-card__img" src="images/res5.jpg" alt="KFC"
-              >
+
+
+              <li class="benefits__list-item">          
+               <article class="restaurant-card">
+                <img class="restaurant-card__img" src="images/res5.jpg" alt="KFC">
+                <div class="restaurant-card__content">
                   <h3 class="restaurant-card__subtitle">
                     KFC
                   </h3>
+                  <div class="restaurant-card__inf">
                   <time class="restaurant-card__time"> 
                     06:00 - 23:30
                   </time>
@@ -459,15 +481,18 @@
                       <use xlink:href="images/sprite.svg#arrow"></use>
                   </svg>    
                   </a>
+                </div>
+                </div>   
+           </article>
               </li>
-            </article>
-              <article>
-              <li class="restaurant-card">
-                <img class="restaurant-card__img" src="images/res6.jpg" alt="Star Burgers"
-              >
+              <li class="benefits__list-item">      
+               <article class="restaurant-card">
+                <img class="restaurant-card__img" src="images/res6.jpg" alt="Star Burgers">
+                <div class="restaurant-card__content">
                   <h3 class="restaurant-card__subtitle">
                     Star Burgers
                   </h3>
+                  <div class="restaurant-card__inf">
                   <time class="restaurant-card__time"> 
                     09:00 - 21:00
                   </time>
@@ -476,8 +501,10 @@
                       <use xlink:href="images/sprite.svg#arrow"></use>
                   </svg>     
                   </a>
+                </div>
+                </div>
+                </article>
               </li>
-            </article>
             </ul>
           </div>
         </div>
@@ -501,7 +528,7 @@
             </div>
             </figure>
 
-
+        
              <figure class="reviews__quote">            
                <div class="reviews__quote-item">
                 <img class="reviews__img" src="images/reviews-bg.jpg" width="300" height="300" alt=""> 

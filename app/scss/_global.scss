@@ -72,6 +72,8 @@ body {
   }
   &:active {
     box-shadow: none;
+    background: rgba(255, 122, 80, 0.1);
+    color: $orange-900;
   }
 }
 
