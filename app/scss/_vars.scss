@@ -1,3 +1,5 @@
+@import "mixin";
+
 $dark: #31352B;
 $darkBlue-900: #363853;
 $orange-900: #FF6838;
@@ -45,6 +47,12 @@ border-radius: 5px;
   transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out, fill 0.3s ease-in-out,  text-shadow 0.3s ease-in-out, fill 0.3s ease-in-out, stroke 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+$breakpoints: (
+  "phone": 560px,
+  "tablet": 768px,
+  "tablet-2": 992px,
+  "desktop": 1230px
+);
 
 
 

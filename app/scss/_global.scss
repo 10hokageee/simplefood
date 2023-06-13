@@ -1,3 +1,5 @@
+@import "mixin";
+
 html,
 body {
   height: 100%;
@@ -13,6 +15,11 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+
+  @include mq('tablet-2') {
+    font-size: 16px;
+    line-height: 1.3;
+   }
 }
 
 .main {
@@ -75,6 +82,7 @@ body {
     background: rgba(255, 122, 80, 0.1);
     color: $orange-900;
   }
+
 }
 
 .sr-only {
@@ -96,6 +104,11 @@ body {
   font-weight: 500;
   font-size: 36px;
   line-height: 1.3;
+
+  
+  @include mq('tablet-2') {
+    font-size: 25px;
+   }
 }
 
 .logo {
@@ -117,4 +130,8 @@ body {
 
 .section-padding {
   padding: 60px 0;
+
+  @include mq('tablet-2') {
+    padding: 50px 0;
+  }
 }
