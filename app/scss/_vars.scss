@@ -1,4 +1,4 @@
-@import "mixin";
+@import 'mixin';
 
 $dark: #31352B;
 $darkBlue-900: #363853;
@@ -7,7 +7,10 @@ $bg-color: #F9FAFF;
 $icon-bg: #ECECEC;
 $dots-bg: #C2C2C2;
 $white: #fff;
-
+$burgerWidth: 40px; 
+$burgerHeight: 25px; 
+$burgerLineHeight: 2px; 
+$burgerColor: #363853; 
 
 %rubik-medium{
   font-family: 'Rubik', sans-serif;
@@ -53,6 +56,9 @@ $breakpoints: (
   "tablet-2": 992px,
   "desktop": 1230px
 );
+
+
+
 
 
 
