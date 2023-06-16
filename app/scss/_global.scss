@@ -144,5 +144,8 @@ body {
 
 
 .lock {
-   overflow: hidden 
+   overflow: hidden ;
+   background-color: rgba(0, 0, 0, 0.5);
+   z-index: 11;
+   position: relative;
   }

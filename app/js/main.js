@@ -37,20 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  //Mobile Menu
-  const burger = document.querySelector('.burger'); //наша кнопка
-  const mobileMenu = document.querySelector('.header-menu__list'); //мобильное меню
-  const bodyLock = document.querySelector('body'); //ищем как селектор ТЕГА
+  const burger = document.querySelector('.burger'); 
+  const mobileMenu = document.querySelector('.header-menu__list'); 
+  const bodyLock = document.querySelector('body'); 
 
   burger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('header-menu__list--active'); //когда меню открыто
-    if (mobileMenu.classList.contains('header-menu__list--active'))  { //Проверяем, есть ли у меню активный класс
-      burger.classList.add('burger--active'); //Когда открыто, иконка становится крестиком
-      bodyLock.classList.add('lock'); //Блокируем скролл при открытом меню
+    mobileMenu.classList.toggle('header-menu__list--active'); 
+    if (mobileMenu.classList.contains('header-menu__list--active'))  { 
+      burger.classList.add('burger--active');
+      bodyLock.classList.add('lock'); 
     }
-    else { //Когда нету активного класса у меню
-      burger.classList.remove('burger--active'); //Возвращает в исходное состояние
-      bodyLock.classList.remove('lock'); //Разрешаем скроллить
+    else { 
+      burger.classList.remove('burger--active'); 
+      bodyLock.classList.remove('lock');  
     }
   });
 });

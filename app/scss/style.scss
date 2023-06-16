@@ -8,7 +8,7 @@
 .header__logo {
   margin-left: 5px;
   margin-right: auto;
-  z-index: 11;
+  z-index: 14;
 
   @include mq('phone') {
     width: 113px;
@@ -27,6 +27,7 @@
 
     @include mq('phone') {
     padding: 14px 0;
+    height: 58px;
     } 
 
   &__list {
@@ -48,8 +49,8 @@
       top: 0;
       left: 0;
       right: 0;
-      background-color: #7792e0;
-      z-index: 10;
+      background-color: $white;
+      z-index: 12;
       transform: translateX(0);
      }
      }
@@ -73,6 +74,14 @@
     display: block;
     order: 1;
     margin-left: 20px;
+    }
+}
+
+.header-top__contacts {
+   display: none;
+
+   @include mq('phone') {
+    display: block;
     }
 }
 
